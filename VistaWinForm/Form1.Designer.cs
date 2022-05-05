@@ -123,7 +123,7 @@ namespace VistaWinForm
             this.Controls.Add(this.dataGridArticulo);
             this.MinimumSize = new System.Drawing.Size(825, 370);
             this.Name = "frmInicial";
-            this.Text = "Form1";
+            this.Text = "Gestion de articulos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridArticulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
