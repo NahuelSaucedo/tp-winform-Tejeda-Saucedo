@@ -5,18 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace Modelo
 {
-    class Articulos
+    public class Articulos
     {
-        public int ID { get; set; }
+        public int id { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public Marcas IdMarca { get; set; }
-        public Categorias IdCategoria { get; set; }
-        public string ImageUrl { get; set; }
-        public float Precio { get; set; }
+        public Marcas Marca { get; set; }
+        public Categorias Categoria { get; set; }
+        public string ImagenUrl { get; set; }
+        public Decimal Precio { get; set; }
 
     }
 }

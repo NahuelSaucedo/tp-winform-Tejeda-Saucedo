@@ -52,6 +52,7 @@ namespace VistaWinForm
             this.dataGridArticulo.Name = "dataGridArticulo";
             this.dataGridArticulo.Size = new System.Drawing.Size(620, 289);
             this.dataGridArticulo.TabIndex = 0;
+            this.dataGridArticulo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridArticulo_CellContentClick);
             // 
             // tbxBusqueda
             // 
@@ -133,6 +134,7 @@ namespace VistaWinForm
             this.Name = "frmInicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de articulos";
+            this.Load += new System.EventHandler(this.frmInicial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridArticulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);

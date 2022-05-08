@@ -7,11 +7,15 @@ using System.Data.SqlClient;
 
 namespace Controlador
 {
-    class AccesoDatos
+    public class AccesoDatos
     {
         private SqlConnection conexion;
         private SqlCommand    comando;
         private SqlDataReader lector;
+        public SqlDataReader Lector
+        {
+            get { return lector; }
+        }
 
 
         public AccesoDatos()

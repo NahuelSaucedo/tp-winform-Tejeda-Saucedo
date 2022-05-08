@@ -146,6 +146,7 @@ namespace VistaWinForm
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Detalle de articulo";
+            this.Load += new System.EventHandler(this.frmDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

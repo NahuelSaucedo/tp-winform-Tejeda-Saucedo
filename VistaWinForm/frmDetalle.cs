@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelo;
+using Controlador;
+
 
 namespace VistaWinForm
 {
@@ -16,5 +19,14 @@ namespace VistaWinForm
         {
             InitializeComponent();
         }
+
+        private void frmDetalle_Load(object sender, EventArgs e)
+        {
+           
+
+        }
+
+
+
     }
 }
