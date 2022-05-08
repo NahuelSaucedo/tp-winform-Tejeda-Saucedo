@@ -18,6 +18,7 @@ namespace VistaWinForm
     {
 
         private List<Articulos> listaArticulos;
+
         public frmInicial()
         {
             InitializeComponent();
@@ -66,15 +67,62 @@ namespace VistaWinForm
             ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulos = negocio.listar();
             dataGridArticulo.DataSource = listaArticulos;
-            dataGridArticulo.Columns["ImagenUrl"].Visible = false;
             pbxArticulo.Load(listaArticulos[0].ImagenUrl);
 
         }
 
         private void dataGridArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(dataGridArticulo.CurrentRow != null) { 
           Articulos seleccionado = (Articulos) dataGridArticulo.CurrentRow.DataBoundItem;
             pbxArticulo.Load(seleccionado.ImagenUrl);
+            }
+
+
+        }
+
+        private void cargar()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                listaArticulos = negocio.listar();
+                dataGridArticulo.DataSource = listaArticulos;
+                ocultarColumnas();
+            
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+         private void tbxBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulos> filtro;
+            string Reset = tbxBusqueda.Text;
+
+            if (Reset != "")
+            {
+                filtro = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(tbxBusqueda.Text.ToUpper()) ||  x.Codigo.ToUpper().Contains(tbxBusqueda.Text.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(tbxBusqueda.Text.ToUpper()) || x.Categoria.Descripcion.ToUpper().Contains(tbxBusqueda.Text.ToUpper()));
+            }
+            else
+            {
+                filtro = listaArticulos;
+            }
+
+
+            dataGridArticulo.DataSource = null;
+            dataGridArticulo.DataSource = filtro;
+            ocultarColumnas();
+
+        }
+
+        private void ocultarColumnas()
+        {
+            dataGridArticulo.Columns["ImagenUrl"].Visible = false;
         }
     }
    

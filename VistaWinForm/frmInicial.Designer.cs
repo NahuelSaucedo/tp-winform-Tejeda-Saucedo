@@ -59,10 +59,11 @@ namespace VistaWinForm
             this.tbxBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
-            this.tbxBusqueda.Location = new System.Drawing.Point(12, 12);
+            this.tbxBusqueda.Location = new System.Drawing.Point(15, 12);
             this.tbxBusqueda.Name = "tbxBusqueda";
             this.tbxBusqueda.Size = new System.Drawing.Size(617, 20);
             this.tbxBusqueda.TabIndex = 1;
+            this.tbxBusqueda.TextChanged += new System.EventHandler(this.tbxBusqueda_TextChanged);
             // 
             // pbxArticulo
             // 
