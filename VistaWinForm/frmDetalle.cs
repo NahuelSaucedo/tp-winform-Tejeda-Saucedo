@@ -15,18 +15,36 @@ namespace VistaWinForm
 {
     public partial class frmDetalle : Form
     {
-        public frmDetalle()
+        Articulos articulo = new Articulos();
+        public frmDetalle(Articulos articulo)
         {
             InitializeComponent();
+            this.articulo = articulo;
         }
 
         private void frmDetalle_Load(object sender, EventArgs e)
         {
-           
+            cargarImagen(articulo.ImagenUrl);
+            tbxCodArt.Text = articulo.Codigo;
+            tbxNombreArt.Text = articulo.Nombre;
+            string precio = "$" + articulo.Precio.ToString();
+            tbxPrecio.Text = precio;
+            tbxDescripcion.Text = articulo.Descripcion;
 
         }
 
 
-
+        void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pbxArticulo.Load("https://previews.123rf.com/images/freshwater/freshwater1711/freshwater171100021/89104479-p%C3%ADxel-404-p%C3%A1gina-de-error-p%C3%A1gina-no-encontrada.jpg");
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

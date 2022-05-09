@@ -86,6 +86,7 @@ namespace VistaWinForm
             this.tbxCodArt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
             this.tbxCodArt.Location = new System.Drawing.Point(113, 7);
             this.tbxCodArt.Name = "tbxCodArt";
+            this.tbxCodArt.ReadOnly = true;
             this.tbxCodArt.Size = new System.Drawing.Size(170, 20);
             this.tbxCodArt.TabIndex = 4;
             // 
@@ -122,6 +123,7 @@ namespace VistaWinForm
             this.pbxArticulo.Location = new System.Drawing.Point(290, 7);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(240, 200);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 8;
             this.pbxArticulo.TabStop = false;
             // 

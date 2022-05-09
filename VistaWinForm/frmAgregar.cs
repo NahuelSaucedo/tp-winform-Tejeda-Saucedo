@@ -112,5 +112,9 @@ namespace VistaWinForm
             this.Close();
         }
 
+        private void pbxArticulo_MouseCaptureChanged(object sender, EventArgs e)
+        {
+            cargarImagen(textBoxUrl.Text);
+        }
     }
 }

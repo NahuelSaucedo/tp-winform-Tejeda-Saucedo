@@ -40,7 +40,8 @@ namespace VistaWinForm
         }
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            frmDetalle detalle = new frmDetalle();
+            Articulos seleccionado = (Articulos)dataGridArticulo.CurrentRow.DataBoundItem;
+            frmDetalle detalle = new frmDetalle(seleccionado);
             detalle.ShowDialog();
             cargar();
         }

@@ -183,8 +183,10 @@ namespace VistaWinForm
             this.pbxArticulo.Location = new System.Drawing.Point(327, 7);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(256, 256);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 14;
             this.pbxArticulo.TabStop = false;
+            this.pbxArticulo.MouseCaptureChanged += new System.EventHandler(this.pbxArticulo_MouseCaptureChanged);
             // 
             // btnAceptar
             // 
