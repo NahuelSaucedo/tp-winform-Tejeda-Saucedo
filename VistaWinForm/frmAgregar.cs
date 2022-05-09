@@ -109,7 +109,10 @@ namespace VistaWinForm
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (DialogResult.OK == MessageBox.Show("Esta accion va a deshacer todos los cambios realizados", "Seguro queres salir?", MessageBoxButtons.OKCancel))
+            {
+                frmAgregar.ActiveForm.Close();
+            }
         }
 
         private void pbxArticulo_MouseCaptureChanged(object sender, EventArgs e)
