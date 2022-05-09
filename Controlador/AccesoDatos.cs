@@ -42,7 +42,7 @@ namespace Controlador
             conexion.Close();
         }
 
-        public void EjecturarAccion()
+        public void EjecutarAccion()
         {
             comando.Connection = conexion;
             try

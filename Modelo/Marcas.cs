@@ -15,9 +15,11 @@ namespace Modelo
         {
             return Descripcion;
         }
-
+        public Marcas(int id, string descripcion)
+        {
+            this.ID = id;
+            this.Descripcion = descripcion;
+        }
+        public Marcas() { }
     }
-
-
-    
 }

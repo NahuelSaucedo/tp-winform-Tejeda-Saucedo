@@ -28,17 +28,21 @@ namespace VistaWinForm
         {
             frmAgregar agregar = new frmAgregar();
             agregar.ShowDialog();
+            cargar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmAgregar modificar = new frmAgregar();
+            Articulos seleccionado = (Articulos)dataGridArticulo.CurrentRow.DataBoundItem;
+            frmAgregar modificar = new frmAgregar(seleccionado);
             modificar.ShowDialog();
+            cargar();
         }
         private void btnDetalle_Click(object sender, EventArgs e)
         {
             frmDetalle detalle = new frmDetalle();
             detalle.ShowDialog();
+            cargar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -60,29 +64,22 @@ namespace VistaWinForm
 
                 MessageBox.Show(ex.ToString());
             }
+            cargar();
         }
 
         private void frmInicial_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.listar();
-            dataGridArticulo.DataSource = listaArticulos;
-            pbxArticulo.Load(listaArticulos[0].ImagenUrl);
-          
+            cargar();
             cbcampo.Items.Add("Codigo");
             cbcampo.Items.Add("Nombre");
             cbcampo.Items.Add("Precio");
-
         }
 
         private void dataGridArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridArticulo.CurrentRow != null) { 
           Articulos seleccionado = (Articulos) dataGridArticulo.CurrentRow.DataBoundItem;
                 cargarImagen(seleccionado.ImagenUrl);
-            }
-
-
         }
 
         private void cargar()
@@ -94,13 +91,10 @@ namespace VistaWinForm
                 dataGridArticulo.DataSource = listaArticulos;
                 ocultarColumnas();
                 cargarImagen(listaArticulos[0].ImagenUrl);
-            
-                
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -109,12 +103,11 @@ namespace VistaWinForm
             try
             {
                 pbxArticulo.Load(imagen);
-
             }
             catch (Exception ex)
             {
-
                 pbxArticulo.Load("https://previews.123rf.com/images/freshwater/freshwater1711/freshwater171100021/89104479-p%C3%ADxel-404-p%C3%A1gina-de-error-p%C3%A1gina-no-encontrada.jpg");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -133,12 +126,9 @@ namespace VistaWinForm
             {
                 filtro = listaArticulos;
             }
-
-
             dataGridArticulo.DataSource = null;
             dataGridArticulo.DataSource = filtro;
             ocultarColumnas();
-
         }
 
         private void ocultarColumnas()
@@ -160,14 +150,8 @@ namespace VistaWinForm
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void cbcampo_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,8 +172,6 @@ namespace VistaWinForm
                 cbcriterio.Items.Add("Termina con");
                 cbcriterio.Items.Add("Igual a");
             }
-           
-
         }
     }
    

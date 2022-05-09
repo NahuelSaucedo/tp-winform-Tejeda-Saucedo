@@ -182,7 +182,6 @@ namespace VistaWinForm
             this.lvlfiltroAvanzado.Size = new System.Drawing.Size(29, 13);
             this.lvlfiltroAvanzado.TabIndex = 12;
             this.lvlfiltroAvanzado.Text = "Filtro";
-            this.lvlfiltroAvanzado.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtfiltro
             // 

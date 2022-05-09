@@ -36,17 +36,17 @@ namespace VistaWinForm
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblUrlImg = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBoxCodArt = new System.Windows.Forms.TextBox();
+            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.textBoxPrecio = new System.Windows.Forms.TextBox();
+            this.textBoxDescripcion = new System.Windows.Forms.TextBox();
+            this.textBoxUrl = new System.Windows.Forms.TextBox();
+            this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
+            this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodArt
@@ -119,72 +119,72 @@ namespace VistaWinForm
             this.lblDescripcion.TabIndex = 6;
             this.lblDescripcion.Text = "Descripcion:";
             // 
-            // textBox1
+            // textBoxCodArt
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
-            this.textBox1.Location = new System.Drawing.Point(113, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBoxCodArt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
+            this.textBoxCodArt.Location = new System.Drawing.Point(113, 7);
+            this.textBoxCodArt.Name = "textBoxCodArt";
+            this.textBoxCodArt.Size = new System.Drawing.Size(207, 20);
+            this.textBoxCodArt.TabIndex = 7;
             // 
-            // comboBox1
+            // comboBoxMarca
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(207, 21);
-            this.comboBox1.TabIndex = 8;
+            this.comboBoxMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
+            this.comboBoxMarca.FormattingEnabled = true;
+            this.comboBoxMarca.Location = new System.Drawing.Point(113, 75);
+            this.comboBoxMarca.Name = "comboBoxMarca";
+            this.comboBoxMarca.Size = new System.Drawing.Size(207, 21);
+            this.comboBoxMarca.TabIndex = 8;
             // 
-            // textBox2
+            // textBoxNombre
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
-            this.textBox2.Location = new System.Drawing.Point(113, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 20);
-            this.textBox2.TabIndex = 9;
+            this.textBoxNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
+            this.textBoxNombre.Location = new System.Drawing.Point(113, 30);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(207, 20);
+            this.textBoxNombre.TabIndex = 9;
             // 
-            // textBox3
+            // textBoxPrecio
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
-            this.textBox3.Location = new System.Drawing.Point(113, 53);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(207, 20);
-            this.textBox3.TabIndex = 10;
+            this.textBoxPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
+            this.textBoxPrecio.Location = new System.Drawing.Point(113, 53);
+            this.textBoxPrecio.Name = "textBoxPrecio";
+            this.textBoxPrecio.Size = new System.Drawing.Size(207, 20);
+            this.textBoxPrecio.TabIndex = 10;
             // 
-            // textBox4
+            // textBoxDescripcion
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
-            this.textBox4.Location = new System.Drawing.Point(15, 173);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(305, 90);
-            this.textBox4.TabIndex = 11;
+            this.textBoxDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
+            this.textBoxDescripcion.Location = new System.Drawing.Point(15, 173);
+            this.textBoxDescripcion.Multiline = true;
+            this.textBoxDescripcion.Name = "textBoxDescripcion";
+            this.textBoxDescripcion.Size = new System.Drawing.Size(305, 90);
+            this.textBoxDescripcion.TabIndex = 11;
             // 
-            // textBox5
+            // textBoxUrl
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
-            this.textBox5.Location = new System.Drawing.Point(113, 122);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(207, 20);
-            this.textBox5.TabIndex = 12;
+            this.textBoxUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
+            this.textBoxUrl.Location = new System.Drawing.Point(113, 122);
+            this.textBoxUrl.Name = "textBoxUrl";
+            this.textBoxUrl.Size = new System.Drawing.Size(207, 20);
+            this.textBoxUrl.TabIndex = 12;
             // 
-            // comboBox2
+            // comboBoxCategoria
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(113, 98);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(207, 21);
-            this.comboBox2.TabIndex = 13;
+            this.comboBoxCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(239)))), ((int)(((byte)(193)))));
+            this.comboBoxCategoria.FormattingEnabled = true;
+            this.comboBoxCategoria.Location = new System.Drawing.Point(113, 98);
+            this.comboBoxCategoria.Name = "comboBoxCategoria";
+            this.comboBoxCategoria.Size = new System.Drawing.Size(207, 21);
+            this.comboBoxCategoria.TabIndex = 13;
             // 
-            // pictureBox1
+            // pbxArticulo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(327, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.pbxArticulo.Location = new System.Drawing.Point(327, 7);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(256, 256);
+            this.pbxArticulo.TabIndex = 14;
+            this.pbxArticulo.TabStop = false;
             // 
             // btnAceptar
             // 
@@ -215,14 +215,14 @@ namespace VistaWinForm
             this.ClientSize = new System.Drawing.Size(590, 300);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pbxArticulo);
+            this.Controls.Add(this.comboBoxCategoria);
+            this.Controls.Add(this.textBoxUrl);
+            this.Controls.Add(this.textBoxDescripcion);
+            this.Controls.Add(this.textBoxPrecio);
+            this.Controls.Add(this.textBoxNombre);
+            this.Controls.Add(this.comboBoxMarca);
+            this.Controls.Add(this.textBoxCodArt);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblUrlImg);
             this.Controls.Add(this.lblCategoria);
@@ -236,7 +236,8 @@ namespace VistaWinForm
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAgregar";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.frmAgregar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,14 +252,14 @@ namespace VistaWinForm
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblUrlImg;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBoxCodArt;
+        private System.Windows.Forms.ComboBox comboBoxMarca;
+        private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.TextBox textBoxPrecio;
+        private System.Windows.Forms.TextBox textBoxDescripcion;
+        private System.Windows.Forms.TextBox textBoxUrl;
+        private System.Windows.Forms.ComboBox comboBoxCategoria;
+        private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }

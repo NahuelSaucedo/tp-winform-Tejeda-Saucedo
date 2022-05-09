@@ -30,22 +30,10 @@ namespace Controlador
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                 
-             
-
-                    lista.Add(aux);
-                  
-                }
-                
-
-             
-                return lista;
-           
-
-          
-      
+                    lista.Add(aux);             
+                }         
+                return lista;    
         }
-
         public void eliminar (int id)
         {
             try
@@ -53,7 +41,7 @@ namespace Controlador
                 AccesoDatos datos = new AccesoDatos();
                    datos.SetConsulta("delete from ARTICULOS where Id = @id");
                    datos.setearParametro("@id", id);
-                   datos.EjecturarAccion();
+                   datos.EjecutarAccion();
             }
             catch (Exception ex)
             {
@@ -62,6 +50,47 @@ namespace Controlador
             }
         }
 
+        public void agregar(Articulos articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "insert into ARTICULOS values('" + articulo.Codigo + "','" + articulo.Nombre + "','" + articulo.Descripcion + "'," + articulo.Marca.ID + "," +articulo.Categoria.ID + ",'" + articulo.ImagenUrl + "'," + articulo.Precio + ")";
+                datos.SetConsulta(consulta);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+        public void modificar(Articulos modificar)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetConsulta("update Articulos set Nombre = @nombre, Descripcion = @descripcion, imagenUrl = @urlImagen, Codigo = @codigo, idmarca = @idmarca, idcategoria=@idcategoria, precio=@precio Where Id = @id");
+                datos.setearParametro("@nombre", modificar.Nombre);
+                datos.setearParametro("@descripcion", modificar.Descripcion);
+                datos.setearParametro("@urlImagen", modificar.ImagenUrl);
+                datos.setearParametro("@codigo", modificar.Codigo);   
+                datos.setearParametro("@idmarca", modificar.Marca.ID);
+                datos.setearParametro("@idcategoria", modificar.Categoria.ID);
+                datos.setearParametro("@id", modificar.id);
+                datos.setearParametro("@precio", modificar.Precio);
+
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<Articulos> filtrar(string campo, string criterio, string filtro)
         {
 
@@ -164,6 +193,6 @@ namespace Controlador
         }
     }
 
-
+    
 
 }
