@@ -13,9 +13,10 @@ namespace Controlador
         {
             List<Articulos> lista = new List<Articulos>();
             AccesoDatos datos = new AccesoDatos();
-
-        
-                datos.SetConsulta("SELECT a.Id, a.Codigo, a.Nombre, a.Descripcion, ImagenUrl, a.precio, m.Descripcion Marca, c.Descripcion Categoria from ARTICULOS A, MARCAS M, CATEGORIAS C WHERE a.IdMarca = m.Id and a.id = c.Id");
+                datos.SetConsulta("SELECT a.Id, a.Codigo, a.Nombre, a.Descripcion, ImagenUrl, a.precio, m.Descripcion Marca, c.Descripcion Categoria " +
+                    "from ARTICULOS A " +
+                    "Inner Join Marcas as m on A.IdMarca = M.Id " +
+                    "Inner Join CATEGORIAS as c on A.IdCategoria = C.Id");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {

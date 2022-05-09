@@ -70,12 +70,9 @@ namespace Controlador
             {
                 conexion.Open();
                 lector = comando.ExecuteReader();
-                
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
