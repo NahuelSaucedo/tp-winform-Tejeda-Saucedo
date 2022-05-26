@@ -125,7 +125,8 @@ namespace VistaWinForm
             this.textBoxCodArt.Location = new System.Drawing.Point(113, 7);
             this.textBoxCodArt.Name = "textBoxCodArt";
             this.textBoxCodArt.Size = new System.Drawing.Size(207, 20);
-            this.textBoxCodArt.TabIndex = 7;
+            this.textBoxCodArt.TabIndex = 1;
+            this.textBoxCodArt.Leave += new System.EventHandler(this.textBoxCodArt_Leave);
             // 
             // comboBoxMarca
             // 
@@ -134,7 +135,8 @@ namespace VistaWinForm
             this.comboBoxMarca.Location = new System.Drawing.Point(113, 75);
             this.comboBoxMarca.Name = "comboBoxMarca";
             this.comboBoxMarca.Size = new System.Drawing.Size(207, 21);
-            this.comboBoxMarca.TabIndex = 8;
+            this.comboBoxMarca.TabIndex = 4;
+            this.comboBoxMarca.Leave += new System.EventHandler(this.comboBoxMarca_Leave);
             // 
             // textBoxNombre
             // 
@@ -142,7 +144,8 @@ namespace VistaWinForm
             this.textBoxNombre.Location = new System.Drawing.Point(113, 30);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(207, 20);
-            this.textBoxNombre.TabIndex = 9;
+            this.textBoxNombre.TabIndex = 2;
+            this.textBoxNombre.Leave += new System.EventHandler(this.textBoxNombre_Leave);
             // 
             // textBoxPrecio
             // 
@@ -150,7 +153,7 @@ namespace VistaWinForm
             this.textBoxPrecio.Location = new System.Drawing.Point(113, 53);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(207, 20);
-            this.textBoxPrecio.TabIndex = 10;
+            this.textBoxPrecio.TabIndex = 3;
             this.textBoxPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrecio_KeyPress);
             // 
             // textBoxDescripcion
@@ -160,7 +163,7 @@ namespace VistaWinForm
             this.textBoxDescripcion.Multiline = true;
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(305, 90);
-            this.textBoxDescripcion.TabIndex = 11;
+            this.textBoxDescripcion.TabIndex = 7;
             // 
             // textBoxUrl
             // 
@@ -168,7 +171,7 @@ namespace VistaWinForm
             this.textBoxUrl.Location = new System.Drawing.Point(113, 122);
             this.textBoxUrl.Name = "textBoxUrl";
             this.textBoxUrl.Size = new System.Drawing.Size(207, 20);
-            this.textBoxUrl.TabIndex = 12;
+            this.textBoxUrl.TabIndex = 6;
             // 
             // comboBoxCategoria
             // 
@@ -177,7 +180,8 @@ namespace VistaWinForm
             this.comboBoxCategoria.Location = new System.Drawing.Point(113, 98);
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(207, 21);
-            this.comboBoxCategoria.TabIndex = 13;
+            this.comboBoxCategoria.TabIndex = 5;
+            this.comboBoxCategoria.Leave += new System.EventHandler(this.comboBoxCategoria_Leave);
             // 
             // pbxArticulo
             // 
@@ -194,7 +198,7 @@ namespace VistaWinForm
             this.btnAceptar.Location = new System.Drawing.Point(427, 269);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 15;
+            this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -204,7 +208,7 @@ namespace VistaWinForm
             this.btnCancelar.Location = new System.Drawing.Point(508, 269);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 16;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

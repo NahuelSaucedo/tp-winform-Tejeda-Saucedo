@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CATALOGO_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CATALOGO_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +90,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="CATALOGO_DBDataSet.xsc">
+      <DependentUpon>CATALOGO_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CATALOGO_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CATALOGO_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CATALOGO_DBDataSet.xss">
+      <DependentUpon>CATALOGO_DBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
