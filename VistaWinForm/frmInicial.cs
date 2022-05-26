@@ -136,20 +136,22 @@ namespace VistaWinForm
         {
             dataGridArticulo.Columns["ID"].Visible = false;
             dataGridArticulo.Columns["ImagenUrl"].Visible = false;
-            dataGridArticulo.Columns["Codigo"].Visible = false;
         }                                                         
 
         private void btnAvanzado_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-           
+            if(string.IsNullOrEmpty(cbcampo.Text) || string.IsNullOrEmpty(cbcriterio.Text))
+            {
+                MessageBox.Show("Por favor, seleccionar campo y criterio", "error");
+                return;
+            }
             try
             {
             string campo = cbcampo.SelectedItem.ToString();
             string criterio = cbcriterio.SelectedItem.ToString();
             string filtro = txtfiltro.Text;
                 dataGridArticulo.DataSource = negocio.filtrar(campo, criterio, filtro);
-
             }
             catch (Exception ex)
             {
@@ -160,7 +162,7 @@ namespace VistaWinForm
         private void cbcampo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string opc = cbcampo.SelectedItem.ToString();
-            if(opc == "Numero")
+            if(opc == "Precio")
             {
                 cbcriterio.Items.Clear();
                 cbcriterio.Items.Add("Menor a");
@@ -175,6 +177,11 @@ namespace VistaWinForm
                 cbcriterio.Items.Add("Termina con");
                 cbcriterio.Items.Add("Igual a");
             }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            cargar();
         }
     }
    

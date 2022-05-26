@@ -30,7 +30,7 @@ namespace Controlador
                     aux.Categoria = new Categorias();
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Precio = decimal.Round((decimal)datos.Lector["Precio"],2); // Para que el precio se vea con dos decimales
                     lista.Add(aux);             
                 }         
                 return lista;    
@@ -105,7 +105,11 @@ namespace Controlador
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "SELECT a.Id, a.Codigo, a.Nombre, a.Descripcion, ImagenUrl, a.precio, m.Descripcion Marca, c.Descripcion Categoria from ARTICULOS A, MARCAS M, CATEGORIAS C WHERE a.IdMarca = m.Id and a.id = c.Id and  ";
+                string consulta = "SELECT a.Id, a.Codigo, a.Nombre, a.Descripcion, ImagenUrl, a.precio, m.Descripcion Marca, c.Descripcion Categoria " +
+                    "from ARTICULOS A " +
+                    "Inner Join Marcas as m on A.IdMarca = M.Id " +
+                    "Inner Join CATEGORIAS as c on A.IdCategoria = C.Id " +
+                    "WHERE ";
                 switch (campo)
                 {
 
@@ -113,13 +117,13 @@ namespace Controlador
                         switch (criterio)
                         {
                             case "Comienza con":
-                                consulta += "Codigo like '" + filtro + "%'";
+                                consulta += "A.Codigo like '" + filtro + "%'";
                                 break;
                             case "Termina con":
-                                consulta += "Codigo like '%" + filtro + "'";
+                                consulta += "a.Codigo like '%" + filtro + "'";
                                 break;
                             case "Igual a":
-                                consulta += "Codigo like '%" + filtro + "%'";
+                                consulta += "a.Codigo like '%" + filtro + "%'";
                                 break;
                             default:
                                 break;
@@ -131,13 +135,13 @@ namespace Controlador
                         switch (criterio)
                         {
                             case "Comienza con":
-                                consulta += "Nombre like '"+ filtro + "%'" ;
+                                consulta += "a.Nombre like '"+ filtro + "%'" ;
                                 break;
                             case "Termina con":
-                                consulta += "Nombre like '%" + filtro + "'";
+                                consulta += "a.Nombre like '%" + filtro + "'";
                                 break;
                             case "Igual a":
-                                consulta += "Nombre like '%" + filtro + "%'";
+                                consulta += "a.Nombre like '%" + filtro + "%'";
                                 break;
                             default:
                                 break;
@@ -148,18 +152,18 @@ namespace Controlador
                         switch (criterio)
                         {
                             case "Menor a":
-                                consulta += "Precio <" + filtro;
+                                consulta += "a.Precio <" + filtro;
                                 break;
 
                             case "Mayor a":
-                                consulta += "Precio >" + filtro;
+                                consulta += "a.Precio >" + filtro;
 
                                 break;
                             case "Igual a:":
-                                consulta += "Precio =" + filtro;
+                                consulta += "a.Precio =" + filtro;
                                 break;
                             default:
-                                consulta += "Numero =" + filtro;
+                                consulta += "a.precio =" + filtro;
                                 break;
                         }
                         break;
