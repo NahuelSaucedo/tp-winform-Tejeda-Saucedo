@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Controlador;
+﻿using Controlador;
 using Modelo;
+using System;
+using System.Windows.Forms;
 
 namespace VistaWinForm
 {
@@ -46,9 +39,9 @@ namespace VistaWinForm
 
                 comboBoxMarca.DataSource = marcaNegocio.listar();
                 comboBoxCategoria.DataSource = categoriaNegocio.listar();
-                comboBoxMarca.ValueMember = "id";
+                comboBoxMarca.ValueMember = "Id";
                 comboBoxMarca.DisplayMember = "descripcion";
-                comboBoxCategoria.ValueMember = "id";
+                comboBoxCategoria.ValueMember = "Id";
                 comboBoxCategoria.DisplayMember = "descripcion";
                 if (articulo != null)
                 {
@@ -56,8 +49,8 @@ namespace VistaWinForm
                     textBoxNombre.Text = articulo.Nombre;
                     textBoxDescripcion.Text = articulo.Descripcion;
                     textBoxUrl.Text = articulo.ImagenUrl;
-                    comboBoxMarca.SelectedValue = articulo.Marca.Descripcion;
-                    comboBoxCategoria.SelectedValue = articulo.Categoria.Descripcion;
+                    comboBoxMarca.SelectedIndex = articulo.Marca.ID;
+                    comboBoxCategoria.SelectedIndex = articulo.Categoria.ID;
                     textBoxPrecio.Text = Convert.ToString(articulo.Precio);
                     cargarImagen(articulo.ImagenUrl);
                 }
@@ -105,7 +98,7 @@ namespace VistaWinForm
                 MessageBox.Show(ex.ToString());
             }
 
-    }
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -118,6 +111,12 @@ namespace VistaWinForm
         private void pbxArticulo_MouseCaptureChanged(object sender, EventArgs e)
         {
             cargarImagen(textBoxUrl.Text);
+        }
+
+        private void textBoxPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 59 || e.KeyChar == 46) && e.KeyChar != 8 && e.KeyChar != 44)
+                e.Handled = true;
         }
     }
 }

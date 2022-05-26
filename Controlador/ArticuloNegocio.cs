@@ -56,8 +56,14 @@ namespace Controlador
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "insert into ARTICULOS values('" + articulo.Codigo + "','" + articulo.Nombre + "','" + articulo.Descripcion + "'," + articulo.Marca.ID + "," +articulo.Categoria.ID + ",'" + articulo.ImagenUrl + "'," + articulo.Precio + ")";
-                datos.SetConsulta(consulta);
+                datos.SetConsulta("Insert into articulos values(@codigo,@nombre,@descripcion,@idmarca,@idcategoria,@urlimagen,@precio)");
+                datos.setearParametro("@codigo", articulo.Codigo);
+                datos.setearParametro("@nombre", articulo.Nombre);
+                datos.setearParametro("@descripcion", articulo.Descripcion);
+                datos.setearParametro("@idmarca", articulo.Marca.ID);
+                datos.setearParametro("@idcategoria", articulo.Categoria.ID);
+                datos.setearParametro("@urlimagen", articulo.ImagenUrl);
+                datos.setearParametro("@precio", articulo.Precio);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)

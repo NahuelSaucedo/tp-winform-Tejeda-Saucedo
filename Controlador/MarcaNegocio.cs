@@ -20,7 +20,7 @@ namespace Controlador
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
-                    lista.Add(new Marcas((int)datos.Lector["id"], (string)datos.Lector["descripcion"]));
+                    lista.Add(new Marcas((int)datos.Lector["Id"], (string)datos.Lector["descripcion"]));
                 }
                 return lista;
 

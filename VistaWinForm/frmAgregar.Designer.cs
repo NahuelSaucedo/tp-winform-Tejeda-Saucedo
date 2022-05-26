@@ -151,6 +151,7 @@ namespace VistaWinForm
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(207, 20);
             this.textBoxPrecio.TabIndex = 10;
+            this.textBoxPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrecio_KeyPress);
             // 
             // textBoxDescripcion
             // 
@@ -190,7 +191,7 @@ namespace VistaWinForm
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(508, 269);
+            this.btnAceptar.Location = new System.Drawing.Point(427, 269);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 15;
@@ -200,7 +201,7 @@ namespace VistaWinForm
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(427, 269);
+            this.btnCancelar.Location = new System.Drawing.Point(508, 269);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 16;
